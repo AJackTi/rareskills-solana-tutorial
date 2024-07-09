@@ -42,3 +42,44 @@ My attempt at learning [Solana](https://solana.com/) [program (smart contract)](
 - [What are Solana Programs?](https://solana.com/docs/core/programs)
 - [Anchor](https://www.anchor-lang.com/)
 - [60-days-of-solana](https://github.com/kshyun28/60-days-of-solana)
+
+## Troubleshooting when deploy smart contract
+
+````bash
+❯ anchor deploy
+Deploying cluster: https://api.devnet.solana.com
+Upgrade authority: /Users/ajackti/.config/solana/id.json
+Deploying program "day_2"...
+Program path: /Users/ajackti/Downloads/Code/Solana/rareskills-solana-tutorial/day_2/target/deploy/day_2.so...
+=============================================================================
+Recover the intermediate account's ephemeral keypair file with
+`solana-keygen recover` and the following 12-word seed phrase:
+=============================================================================
+slide swear salmon castle awkward alter fossil swamp tonight note invest code
+=============================================================================
+To resume a deploy, pass the recovered keypair as the
+[BUFFER_SIGNER] to `solana program deploy` or `solana program write-buffer'.
+Or to recover the account's lamports, pass it as the
+[BUFFER_ACCOUNT_ADDRESS] argument to `solana program close`.
+=============================================================================
+Error: Deploying program failed: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: account data too small for instruction [3 log messages]
+There was a problem deploying: Output { status: ExitStatus(unix_wait_status(256)), stdout: "", stderr: "" }.```
+````
+
+- Follow the below solution:
+
+```bash
+rm -rf target
+```
+
+```bash
+anchor build
+```
+
+```bash
+anchor deploy
+```
+
+```bash
+anchor keys sync
+```
