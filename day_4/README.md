@@ -1,6 +1,6 @@
-# Day 3: Solana Anchor Program IDL
+# Day 4: Require, Revert, and Custom Errors in Solana
 
-[Day 3](https://www.rareskills.io/post/anchor-idl) of [RareSkills Solana Course](https://www.rareskills.io/solana-tutorial).
+[Day 4](https://www.rareskills.io/post/solana-require-macro) of [RareSkills Solana Course](https://www.rareskills.io/solana-tutorial).
 
 ## Setup
 
