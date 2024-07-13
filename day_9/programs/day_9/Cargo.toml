@@ -1,0 +1,21 @@
+[package]
+name = "day_9"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "day_9"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+syn = {version="1.0.57",features=["full","fold"]}
+quote = "1.0.8"
