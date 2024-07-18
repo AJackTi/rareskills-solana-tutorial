@@ -1,7 +1,7 @@
-import * as anchor from '@coral-xyz/anchor';
-import { Program } from '@coral-xyz/anchor';
+import * as anchor from "@coral-xyz/anchor";
+import { Program } from "@coral-xyz/anchor";
 
-import { StorageInt } from '../target/types/storage_int';
+import { StorageInt } from "../target/types/storage_int";
 
 describe("storage_int", () => {
   // Configure the client to use the local cluster.
@@ -29,5 +29,10 @@ describe("storage_int", () => {
 
     let myStorageStruct = await program.account.myStorage.fetch(myStorage);
     console.log("The value of x is:", myStorageStruct.x.toString());
+
+    let myStorageInfo = await anchor
+      .getProvider()
+      .connection.getAccountInfo(myStorage);
+    console.log("the storage account info is", myStorageInfo);
   });
 });
